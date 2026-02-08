@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不被钱绑架的日常 - 一本面向一线城市年轻上班族的故事型理财书</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边导航 */
+        .sidebar {
+            width: 280px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 1.5rem 0 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin: 0.3rem 0;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* 主内容区 */
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 800px;
+        }
+
+        /* 封面区域 */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+
+        .book-cover {
+            max-width: 200px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        /* 简介区域 */
+        .intro {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .intro h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .intro p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        /* 核心观点 */
+        .core-points {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .core-points h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .core-list {
+            list-style: none;
+        }
+
+        .core-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .core-item:before {
+            content: "•";
+            color: #3498db;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+
+        /* 章节内容 */
+        .chapter {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            display: none;
+        }
+
+        .chapter.active {
+            display: block;
+        }
+
+        .chapter h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .chapter-content {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .chapter-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 1rem;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* 底部信息 */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .license {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边导航 -->
+        <nav class="sidebar">
+            <div class="logo">不被钱绑架的日常</div>
+            <div class="nav-title">导航</div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#intro" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="#chapter1" class="nav-link">第1章：加班后的便利店</a></li>
+                <li class="nav-item"><a href="#chapter2" class="nav-link">第2章：奶茶店的对话</a></li>
+                <li class="nav-item"><a href="#chapter3" class="nav-link">第3章：午休时的楼梯间</a></li>
+                <li class="nav-item"><a href="#chapter4" class="nav-link">第4章：工资到账日</a></li>
+                <li class="nav-item"><a href="#chapter5" class="nav-link">第5章：租房的权衡</a></li>
+                <li class="nav-item"><a href="#chapter6" class="nav-link">第6章：同事的婚礼</a></li>
+                <li class="nav-item"><a href="#chapter7" class="nav-link">第7章：生病的启示</a></li>
+                <li class="nav-item"><a href="#chapter8" class="nav-link">第8章：加班的选择</a></li>
+                <li class="nav-item"><a href="#chapter9" class="nav-link">第9章：兼职的思考</a></li>
+                <li class="nav-item"><a href="#chapter10" class="nav-link">第10章：购物车的清空</a></li>
+                <li class="nav-item"><a href="#chapter11" class="nav-link">第11章：被动收入的开始</a></li>
+                <li class="nav-item"><a href="#chapter12" class="nav-link">第12章：周末的咖啡馆</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 封面区域 -->
+            <section id="intro" class="hero">
+                <h1>不被钱绑架的日常</h1>
+                <p>一本面向一线城市年轻上班族的故事型理财书</p>
+                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20financial%20book%20cover%20with%20minimalist%20design%2C%20showing%20a%20young%20professional%20enjoying%20life%20without%20money%20stress%2C%20clean%20typography%2C%20blue%20and%20white%20color%20scheme&image_size=square_hd" alt="不被钱绑架的日常" class="book-cover">
+            </section>
+
+            <!-- 简介区域 -->
+            <section class="intro">
+                <h2>关于本书</h2>
+                <p>《不被钱绑架的日常》是一本面向一线城市年轻上班族的故事型理财书，通过真实场景和具体人物，传递实用的理财理念和生活方式。</p>
+                <p>本书以林晚为主角，讲述了她从被消费主义包围到逐步实现财务自由的转变过程。书中通过12个日常场景，融入了预算管理、消费习惯、紧急资金、被动收入等理财核心概念，强调通过小习惯的改变实现财务自由，而非追求一夜暴富。</p>
+                <p>无论你是刚开始工作的新人，还是已经在职场打拼多年的老手，都能从书中获得启发，找到适合自己的理财方法，让金钱成为服务生活的工具，而不是绑架生活的枷锁。</p>
+            </section>
+
+            <!-- 核心观点 -->
+            <section class="core-points">
+                <h2>核心观点</h2>
+                <ul class="core-list">
+                    <li class="core-item">区分需求与欲望：学会识别真正的需求，避免冲动消费</li>
+                    <li class="core-item">建立预算系统：通过记账和预算，掌控个人财务</li>
+                    <li class="core-item">紧急资金储备：建立3-6个月生活费的紧急资金</li>
+                    <li class="core-item">被动收入建设：通过指数基金定投等方式，逐步建立被动收入</li>
+                    <li class="core-item">时间价值意识：认识到时间是最宝贵的资产</li>
+                    <li class="core-item">生活质量平衡：在理财的同时，保持生活的品质和乐趣</li>
+                </ul>
+            </section>
+
+            <!-- 章节内容 -->
+            <section id="chapter1" class="chapter">
+                <h2>第1章：加班后的便利店</h2>
+                <div class="chapter-content">
+                    <p>晚上十点半，林晚拖着疲惫的身体走出写字楼。加班到这么晚已经不是第一次了，她感觉整个人都像被抽干了一样。</p>
+                    <p>路过公司楼下的便利店时，她习惯性地走了进去。便利店里的暖黄色灯光让她感到一丝温暖，货架上的零食和饮料在向她招手。</p>
+                    <p>"欢迎光临！"店员老张热情地打招呼。林晚冲着他笑了笑，然后走向冷藏柜。她的目光落在了那些包装精美的寿司和沙拉上，还有她最喜欢的抹茶味冰淇淋。</p>
+                    <p>就在她伸手去拿冰淇淋的时候，她突然想起了上个月的信用卡账单。那笔超出预算的支出让她这个月的生活变得有些拮据，她不得不取消了和朋友的聚会，甚至减少了买咖啡的次数。</p>
+                    <p>"林小姐，今天又加班啊？"老张的声音打断了她的思绪。</p>
+                    <p>"嗯，项目赶进度。"林晚收回了手，转身看向货架上的泡面。</p>
+                    <p>"年轻人还是要注意身体啊，总是加班对健康不好。"老张一边扫码一边说，"我看你最近总是买泡面，是不是遇到什么困难了？"</p>
+                    <p>林晚苦笑了一下："最近开销有点大，得节省点。"</p>
+                    <p>老张点点头："我年轻的时候也是这样，总觉得钱是赚来花的，不知道节省。后来遇到点事，才明白存钱的重要性。"</p>
+                    <p>林晚接过泡面，心里突然有些触动。她想起了自己刚毕业时的雄心壮志，想起了那个想要在这个城市立足的自己。可是现在，她感觉自己好像被生活推着走，每天加班赚钱，然后又不知不觉地把钱花掉。</p>
+                    <p>走出便利店，夜晚的风吹在脸上，林晚感觉清醒了许多。她决定从明天开始，要好好规划自己的财务，不再做月光族。</p>
+                </div>
+            </section>
+
+            <section id="chapter2" class="chapter">
+                <h2>第2章：奶茶店的对话</h2>
+                <div class="chapter-content">
+                    <p>周三下午，林晚和同事小晴一起去公司附近的奶茶店买饮料。排队的时候，小晴兴奋地拿出手机："你看，这个新出的限定款奶茶看起来好好喝！"</p>
+                    <p>林晚看了看价格，一杯要38块钱，她犹豫了一下："有点贵啊。"</p>
+                    <p>小晴撇了撇嘴："偶尔喝一次嘛，又不是天天喝。你最近怎么变得这么抠门了？"</p>
+                    <p>林晚笑了笑，没有说话。她想起了上周制定的预算计划，决定要控制自己的非必要支出。</p>
+                    <p>"对了，我昨天看到一款特别好看的包包，打折后只要两千多，你要不要一起买？"小晴继续说，"现在不买，过几天就恢复原价了。"</p>
+                    <p>林晚摇了摇头："我现在不需要新包包，我的旧包还能用。"</p>
+                    <p>小晴有些不解："你不是一直想要一个名牌包吗？现在打折这么划算，错过了多可惜。"</p>
+                    <p>林晚深呼吸了一下，认真地说："我最近在学习理财，发现自己之前的消费习惯有问题。总是买一些不需要的东西，结果存不下什么钱。"</p>
+                    <p>"理财？"小晴惊讶地看着她，"你这么年轻，就开始理财了？"</p>
+                    <p>"正是因为年轻，才更应该理财啊。"林晚说，"我不想以后被钱绑架，想要有更多选择的自由。"</p>
+                    <p>小晴若有所思地点了点头："其实我也觉得自己存不下钱，但是不知道从哪里开始。"</p>
+                    <p>"从记账开始吧。"林晚建议，"先了解自己的钱都花在哪里，然后再制定预算。"</p>
+                    <p>那天晚上，林晚回到家后，打开了记账软件，仔细记录了当天的每一笔支出。她发现，虽然她已经开始注意节省，但还是有一些不必要的开销。</p>
+                    <p>她决定，从明天开始，要更加严格地执行预算计划，把钱花在真正重要的地方。</p>
+                </div>
+            </section>
+
+            <!-- 其他章节内容可以根据需要添加 -->
+
+            <!-- 底部信息 -->
+            <footer class="footer">
+                <p>© 2024 《不被钱绑架的日常》</p>
+                <p class="license">本作品采用 <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 1.0 Universal</a> 进行许可</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // 导航切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const chapters = document.querySelectorAll('.chapter');
+            const introSection = document.querySelector('.hero');
+            const otherSections = document.querySelectorAll('.intro, .core-points');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+
+                    // 隐藏所有章节和其他部分
+                    chapters.forEach(chapter => {
+                        chapter.style.display = 'none';
+                    });
+
+                    // 显示目标部分
+                    if (targetId === '#intro') {
+                        // 显示首页部分
+                        introSection.style.display = 'block';
+                        otherSections.forEach(section => {
+                            section.style.display = 'block';
+                        });
+                    } else {
+                        // 隐藏首页部分
+                        introSection.style.display = 'none';
+                        otherSections.forEach(section => {
+                            section.style.display = 'none';
+                        });
+                        
+                        // 显示目标章节
+                        const targetChapter = document.querySelector(targetId);
+                        if (targetChapter) {
+                            targetChapter.style.display = 'block';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
