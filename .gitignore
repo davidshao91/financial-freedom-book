@@ -1,0 +1,31 @@
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# IDE相关文件
+.vscode/
+.idea/
+.trae/
+
+# 依赖目录
+node_modules/
+
+# 编译输出
+dist/
+build/
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+
+# 日志文件
+*.log
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# 文档生成文件
+*.docx
